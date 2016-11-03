@@ -1,5 +1,8 @@
 const App = getApp();
 const api = require('../../utils/api.js');
+const util = require('../../utils/util.js');
+
+const formatTime = util.formatTime;
 
 Page({
   data: {
@@ -29,12 +32,16 @@ Page({
     });
     api.trip.hot(data, (state, res) => {
       if (state === 'success') {
-        let newList = [];
+        let newList = res.data.data.elements;
+        newList.map((trip) => {
+          const item = trip;
+          item.data[0].date_added = formatTime(new Date(item.data[0].date_added * 1000));
+          return item;
+        });
         if (needRefresh) {
-          newList = res.data.data.elements;
           wx.stopPullDownRefresh();
         } else {
-          newList = self.data.trips.concat(res.data.data.elements);
+          newList = self.data.trips.concat(newList);
         }
         self.setData({
           trips: newList,
