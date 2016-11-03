@@ -1,0 +1,9 @@
+@import "../m-trip/m-trip.wxss";
+
+page{
+  background-color: #fbf7ed;
+  padding: 10px;
+}
+.trip-title{
+  margin-bottom: 5px;
+}

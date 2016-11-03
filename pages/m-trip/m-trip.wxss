@@ -1,0 +1,55 @@
+.m-trip{
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.m-trip .cover{
+  width: 100%;
+  height: 200px;
+  vertical-align: bottom;
+}
+.m-trip::before{
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 280px;
+  height: 100%;
+  background: linear-gradient(to right,rgba(0,0,0,.6) 0,rgba(0,0,0,0) 100%);
+}
+.m-trip .info{
+  color: #fff;
+  padding: 0 15px;
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  box-sizing: border-box;
+}
+.m-trip .info .h2{
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.22;
+  text-shadow: 1px 1px rgba(0,0,0,.4);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  margin-top: 15px;
+}
+.m-trip .info .h3{
+  margin-top: 6px;
+  line-height: 1.33;
+  font-size: 0.9rem;
+}
+.m-trip .info p{
+  position: absolute;
+  bottom: 12px;
+  left: 15px;
+  font-size: 1rem;
+}
