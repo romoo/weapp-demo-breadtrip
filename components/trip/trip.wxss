@@ -17,6 +17,8 @@
   top: 0;
   width: 280px;
   height: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   background: linear-gradient(to right,rgba(0,0,0,.6) 0,rgba(0,0,0,0) 100%);
 }
 .m-trip .info{

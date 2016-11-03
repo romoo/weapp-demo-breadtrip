@@ -40,10 +40,11 @@ const trip = {
       },
     });
   },
-  hot(callback) {
+  hot(data, callback) {
     wx.request({
-      url: 'http://api.breadtrip.com/trips/hot/',
+      url: 'http://api.breadtrip.com/v2/index/',
       method: 'GET',
+      data,
       header: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
