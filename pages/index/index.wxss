@@ -1,4 +1,4 @@
-@import "../m-trip/m-trip.wxss";
+@import "../../components/trip/trip.wxss";
 
 page{
   background-color: #fbf7ed;

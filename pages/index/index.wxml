@@ -1,4 +1,4 @@
-<import src="../m-trip/m-trip.wxml"/>
+<import src="../../components/trip/trip.wxml"/>
 <view class="user">
   <block wx:for="{{ trips }}" wx:for-item="trip">
     <template is="m-trip" data="{{trip: trip}}"/>
