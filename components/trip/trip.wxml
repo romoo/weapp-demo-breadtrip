@@ -3,6 +3,14 @@
     <image class="cover" src="{{ trip.cover_image_w640 }}" background-size="cover"></image>
     <view class="info">
       <text class="h2">{{ trip.name }}</text>
+      <view class="detail">
+        <view><text>{{ trip.date_added }}</text><text>{{ trip.day_count }}天</text><text>{{ trip.view_count }}次浏览</text></view>
+        <view class="place">{{ trip.popular_place_str }}</view>
+      </view>
+      <view class="user">
+        <image class="avatar" src="{{ trip.user.avatar_l }}"></image>
+        <view class="name">by {{ trip.user.name }}</view>
+      </view>
     </view>
   </view>
 </template>

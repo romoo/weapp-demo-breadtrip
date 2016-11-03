@@ -6,17 +6,17 @@ page{
 .list{
 }
 .m-trip{
-  margin: 10px;
+  margin: 20rpx;
 }
 .trip-title{
-  margin-bottom: 5px;
+  margin-bottom: 10rpx;
 }
 .loading{
   text-align: center;
-  margin: 10px 0;
+  margin: 20rpx 0;
 }
 .loading-gif{
-  width: 110px;
-  height: 21px;
+  width: 220rpx;
+  height: 42rpx;
   vertical-align: bottom;
 }

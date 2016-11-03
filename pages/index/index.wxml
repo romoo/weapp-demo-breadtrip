@@ -2,7 +2,7 @@
 
 <scroll-view class="list" style="height: {{ windowHeight }}px; width: {{ windowWidth }}px;" scroll-y="true"  bindscrolltolower="loadMore" lower-threshold="800">
   <block wx:for="{{ trips }}" wx:for-item="trip">
-    <template is="m-trip" data="{{trip: trip.data[0]}}" />
+    <template is="m-trip" wx:if="{{ trip.type === 4 }}" data="{{trip: trip.data[0]}}" />
   </block>
   <view class="loading">
     <image class="loading-gif" src="../../images/loading.gif"></image>
