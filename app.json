@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/destination/destination",
     "pages/user/user",
     "pages/trip/trip"
   ],
@@ -9,6 +10,23 @@
     "navigationBarBackgroundColor": "#4abdcc",
     "navigationBarTitleText": "面包旅行",
     "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#b0b0b0",
+    "selectedColor": "#4abdcc",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "images/index_normal.png",
+      "selectedIconPath": "images/index_pressed.png",
+      "text": "推荐"
+    }, {
+      "pagePath": "pages/destination/destination",
+      "iconPath": "images/destination_normal.png",
+      "selectedIconPath": "images/destination_pressed.png",
+      "text": "发现"
+    }]
   },
   "debug": true
 }

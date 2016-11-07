@@ -64,6 +64,28 @@ const trip = {
   },
 };
 
+const destination = {
+  list(callback) {
+    wx.request({
+      url: `${apiURL}/destination/v3/`,
+      method: 'GET',
+      header: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      success(res) {
+        callback('success', res);
+      },
+      fail(res) {
+        callback('fail', res);
+      },
+      complete(res) {
+        callback('complete', res);
+      },
+    });
+  },
+};
+
 const waypoint = {
   detail(tripId, waypointId, callback) {
     wx.request({
@@ -108,5 +130,6 @@ const waypoint = {
 module.exports = {
   user,
   trip,
+  destination,
   waypoint,
 };

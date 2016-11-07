@@ -1,7 +1,7 @@
 @import "../../components/trip/trip.wxss";
 
 page{
-  background-color: #fbf7ed;
+  background-color: #f6f6f6;
 }
 .list{
 }
@@ -12,6 +12,7 @@ page{
   margin-bottom: 10rpx;
 }
 .loading{
+  color: #b0b0b0;
   text-align: center;
   margin: 20rpx 0;
 }
