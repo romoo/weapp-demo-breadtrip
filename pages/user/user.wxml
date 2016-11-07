@@ -19,8 +19,8 @@
   </view>
 </view>
 <view class="trips">
-  <view class="trip-title">游记</view>
+  <view class="trip-title">游记<view class="count">{{ trips.length }}</view></view>
   <block wx:for="{{ trips }}" wx:for-item="trip">
-    <template is="m-trip" data="{{trip: trip}}"/>
+    <template is="m-trip" data="{{trip: trip, mode: 2}}"/>
   </block>
 </view>

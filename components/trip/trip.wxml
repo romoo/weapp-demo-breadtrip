@@ -4,13 +4,14 @@
     <view class="info">
       <text class="h2">{{ trip.name }}</text>
       <view class="detail">
-        <view><text>{{ trip.date_added }}</text><text>{{ trip.day_count }}天</text><text>{{ trip.view_count }}次浏览</text></view>
-        <view class="place">{{ trip.popular_place_str }}</view>
+        <view><text>{{ trip.date_added }}</text><text>{{ trip.day_count }}天</text><text wx:if="{{ mode === 1 }}">{{ trip.view_count }}次浏览</text></view>
+        <view class="place" wx:if="{{ mode === 1 }}">{{ trip.popular_place_str }}</view>
       </view>
-      <view class="user">
+      <view class="user" wx:if="{{ mode === 1 }}">
         <image class="avatar" src="{{ trip.user.avatar_l }}"></image>
         <view class="name">by {{ trip.user.name }}</view>
       </view>
+      <view class="bottom" wx:if="{{ mode === 2 }}">{{ trip.view_count }}次浏览 / {{ trip.liked_count }}喜欢 / {{ trip.total_comments_count }}评论</view>
     </view>
   </view>
 </template>

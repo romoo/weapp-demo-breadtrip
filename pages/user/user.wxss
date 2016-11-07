@@ -64,4 +64,16 @@ page{
 }
 .trip-title{
   margin-bottom: 10rpx;
+  font-size: 30rpx;
+}
+.trip-title .count{
+  font-size: 24rpx;
+  color: #fff;
+  background-color: #e7e7e7;
+  padding: 0rpx 16rpx;
+  display: inline-block;
+  border-radius: 38rpx;
+  margin-left: 12rpx;
+  position: relative;
+  top: -2rpx;
 }

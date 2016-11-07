@@ -1,5 +1,8 @@
 const App = getApp();
 const api = require('../../utils/api.js');
+const util = require('../../utils/util.js');
+
+const formatTime = util.formatTime;
 
 Page({
   data: {
@@ -13,8 +16,14 @@ Page({
     const userId = options.id || self.data.userId;
     api.user.info(userId, (state, res) => {
       if (state === 'success') {
+        const trips = res.data.trips;
+        trips.map((trip) => {
+          const item = trip;
+          item.date_added = formatTime(new Date(item.date_added * 1000), 1);
+          return item;
+        });
         self.setData({
-          trips: res.data.trips,
+          trips,
           userId: res.data.userId,
           user_info: res.data.user_info,
         });

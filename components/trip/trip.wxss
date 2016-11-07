@@ -66,7 +66,7 @@
 .m-trip .detail::before{
   content: '';
   width: 6rpx;
-  height: 38rpx;
+  height: 100%;
   border-right: 1rpx;
   background-color: #4ABDCC;
   position: absolute;
@@ -88,4 +88,9 @@
   margin-right: 15rpx;
   border-radius: 50rpx;
   vertical-align: bottom;
+}
+.m-trip .bottom{
+  position: absolute;
+  bottom: 24rpx;
+  font-size: 20rpx;
 }
