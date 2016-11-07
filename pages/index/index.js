@@ -35,7 +35,7 @@ Page({
         let newList = res.data.data.elements;
         newList.map((trip) => {
           const item = trip;
-          item.data[0].date_added = formatTime(new Date(item.data[0].date_added * 1000));
+          item.data[0].date_added = formatTime(new Date(item.data[0].date_added * 1000), 1);
           return item;
         });
         if (needRefresh) {

@@ -1,0 +1,67 @@
+@import "../../components/trip/trip.wxss";
+
+page{
+  background-color: #fbf7ed;
+  font-size: 24rpx;
+}
+.header{
+  position: relative;
+}
+.header image{
+  vertical-align: bottom;
+}
+.header .mask{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 1;
+}
+.header .user{
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+.header .info{
+  position: relative;
+  text-align: center;
+  margin-top: 13.8%;
+}
+.header .follower,
+.header .following{
+  position: absolute;
+  top: 20rpx;
+  left: 50%;
+  width: 100rpx;
+}
+.header .count{
+  font-size: 40rpx;
+}
+.header .follower{
+  margin-left: -200rpx;
+}
+.header .following{
+  margin-left: 100rpx;
+}
+.header .avatar{
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 144rpx;
+  vertical-align: bottom;
+}
+.header .name{
+  margin-top: 4.1%;
+  font-size: 32rpx;
+  text-align: center;
+}
+.trips{
+  padding: 10px;
+}
+.trip-title{
+  margin-bottom: 10rpx;
+}

@@ -1,7 +1,9 @@
+const apiURL = 'http://api.breadtrip.com';
+
 const user = {
   info(userId, callback) {
     wx.request({
-      url: `http://api.breadtrip.com/users/${userId}/v2/`,
+      url: `${apiURL}/users/${userId}/v2/`,
       method: 'GET',
       header: {
         Accept: 'application/json',
@@ -23,7 +25,7 @@ const user = {
 const trip = {
   waypoints(tripId, callback) {
     wx.request({
-      url: `http://api.breadtrip.com/trips/${tripId}/waypoints/`,
+      url: `${apiURL}/trips/${tripId}/waypoints/`,
       method: 'GET',
       header: {
         Accept: 'application/json',
@@ -42,7 +44,7 @@ const trip = {
   },
   hot(data, callback) {
     wx.request({
-      url: 'http://api.breadtrip.com/v2/index/',
+      url: `${apiURL}/v2/index/`,
       method: 'GET',
       data,
       header: {
@@ -65,7 +67,7 @@ const trip = {
 const waypoint = {
   detail(tripId, waypointId, callback) {
     wx.request({
-      url: `http://api.breadtrip.com/trips/${tripId}/waypoints/${waypointId}/`,
+      url: `${apiURL}/trips/${tripId}/waypoints/${waypointId}/`,
       method: 'GET',
       header: {
         Accept: 'application/json',
@@ -84,7 +86,7 @@ const waypoint = {
   },
   replies(tripId, waypointId, callback) {
     wx.request({
-      url: `http://api.breadtrip.com/trips/${tripId}/waypoints/${waypointId}/replies/`,
+      url: `${apiURL}/trips/${tripId}/waypoints/${waypointId}/replies/`,
       method: 'GET',
       header: {
         Accept: 'application/json',
