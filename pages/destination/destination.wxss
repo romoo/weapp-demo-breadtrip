@@ -88,6 +88,7 @@ page{
 .poi .title{
   font-size: 32rpx;
   font-weight: bold;
+  padding-right: 28rpx;
   text-shadow: 2rpx 4rpx rgba(0, 0, 0, .12);
 }
 .poi .rating image{
