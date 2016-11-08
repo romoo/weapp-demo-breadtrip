@@ -2,7 +2,7 @@
   <block wx:for="{{ elements }}" wx:for-item="e">
     <view class="title">{{ e.title }}</view>
     <view class="list">
-      <view class="poi" data-type="{{ poi.type }}" data-id="{{ poi.id }}" bindtap="viewPOI" wx:for="{{ e.data }}" wx:for-item="poi">
+      <view class="poi" data-type="{{ poi.type }}" data-id="{{ poi.id }}" data-name="{{ poi.name }}" bindtap="viewPOI" wx:for="{{ e.data }}" wx:for-item="poi">
         <image src="{{ poi.cover_s }}"></image>
         <view class="mask"></view>
         <view class="name">{{ poi.name }}</view>

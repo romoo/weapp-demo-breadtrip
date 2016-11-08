@@ -1,0 +1,31 @@
+<view class="header">
+  <image style="width: {{ windowWidth }}px;" src="{{ info.hottest_places[0].photo }}" mode="aspectFill"></image>
+  <view class="title">
+    <view class="h1">{{ info.name_zh }}</view>
+    <view class="detail">{{ info.visited_count }}去过  /  {{ info.wish_to_go_count }}喜欢</view>
+  </view>
+  <view class="photo"></view>
+  <view class="mask"></view>
+</view>
+<view class="nav">
+</view>
+<view wx:if="{{ pois }}" class="place">
+  <view class="h2"><text>热门地点</text></view>
+  <view class="list">
+    <view wx:for="{{ pois }}" wx:for-item="poi" class="poi">
+      <image src="{{ poi.cover_s }}" mode="aspectFill"></image>
+      <view class="info">
+        <view class="title">{{ poi.name }}</view>
+        <view class="rating">
+          <block wx:for="{{ [1, 2, 3, 4, 5] }}" wx:for-item="star">
+            <image wx:if="{{ star <= poi.rating }}" src="../../images/destination/star_s.png"></image>
+            <image wx:if="{{ star > poi.rating && star - 1 < poi.rating }}" src="../../images/destination/semistar_s.png"></image>
+            <image wx:if="{{ star > poi.rating && !(star - 1 < poi.rating) }}" src="../../images/destination/unstar_s.png"></image>
+          </block>
+          <view class="count">{{ poi.rating }}人点评</view>
+        </view>
+      </view>
+      <view class="mask"></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,107 @@
+@import "../../components/trip/trip.wxss";
+
+page{
+  background-color: #fbf7ed;
+}
+.header{
+  color: #fff;
+  position: relative;
+}
+.header image{
+  height: 400rpx;
+  vertical-align: bottom;
+}
+.header .title{
+  position: absolute;
+  z-index: 5;
+  left: 30rpx;
+  bottom: 50rpx;
+}
+.header .h1{
+  font-size: 60rpx;
+  font-weight: bold;
+}
+.header .detail{
+  color: rgba(255, 255, 255, .8);
+  font-size: 22rpx;
+}
+.header .mask{
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 120rpx;
+  background-image: linear-gradient(to top,rgba(0,0,0,.6),rgba(0,0,0,0));
+}
+.nav{
+  background-color: #fbf7ed;
+  position: relative;
+  z-index: 2;
+  border-radius: 20rpx 20rpx 0 0;
+  top: -20rpx;
+  padding-bottom: 100rpx;
+}
+.place .h2{
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+.list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: center;
+  padding: 0 20rpx;
+  margin-bottom: 50rpx;
+}
+.poi{
+  color: #fff;
+  position: relative;
+  margin-bottom: 12rpx;
+}
+.poi image{
+  width: 349rpx;
+  height: 349rpx;
+  border-radius: 8rpx;
+  vertical-align: bottom;
+}
+.poi .mask{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  border-radius: 0 0 8rpx 8rpx;
+  background-image: linear-gradient(to top,rgba(0, 0, 0, .8),rgba(0, 0, 0, 0));
+  z-index: 1;
+}
+.poi .info{
+  position: absolute;
+  left: 28rpx;
+  bottom: 20rpx;
+  z-index: 2;
+}
+.poi .title{
+  font-size: 32rpx;
+  font-weight: bold;
+  text-shadow: 2rpx 4rpx rgba(0, 0, 0, .12);
+}
+.poi .rating image{
+  width: 16rpx;
+  height: 16rpx;
+  float: left;
+  position: relative;
+  top: 6rpx;
+  margin-right: 8rpx;
+}
+.poi .rating .count{
+  float: left;
+  margin-left: 10rpx;
+  font-size: 18rpx;
+  color: rgba(255, 255, 255, .6);
+  text-shadow: 2rpx 4rpx rgba(0, 0, 0, .12);
+}

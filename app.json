@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/explore/explore",
+    "pages/destination/destination",
     "pages/waypoint/waypoint",
     "pages/user/user",
     "pages/trip/trip"
@@ -24,8 +25,8 @@
       "text": "推荐"
     }, {
       "pagePath": "pages/explore/explore",
-      "iconPath": "images/destination_normal.png",
-      "selectedIconPath": "images/destination_pressed.png",
+      "iconPath": "images/explore_normal.png",
+      "selectedIconPath": "images/explore_pressed.png",
       "text": "发现"
     }]
   },

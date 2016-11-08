@@ -27,6 +27,8 @@ Page({
   },
   viewPOI(e) {
     const data = e.currentTarget.dataset;
-    console.log(data);
+    wx.navigateTo({
+      url: `../destination/destination?type=${data.type}&id=${data.id}&name=${data.name}`,
+    });
   },
 });

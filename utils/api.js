@@ -84,6 +84,49 @@ const destination = {
       },
     });
   },
+  place(type, id, callback) {
+    wx.request({
+      url: `${apiURL}/destination/place/${type}/${id}/`,
+      method: 'GET',
+      header: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      success(res) {
+        callback('success', res);
+      },
+      fail(res) {
+        callback('fail', res);
+      },
+      complete(res) {
+        callback('complete', res);
+      },
+    });
+  },
+  poi(type, id, poiType, data, callback) {
+    let poi = 'all/';
+    if (poiType) {
+      poi = `${poiType}/`;
+    }
+    wx.request({
+      url: `${apiURL}/destination/place/${type}/${id}/pois/${poi}`,
+      method: 'GET',
+      data,
+      header: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      success(res) {
+        callback('success', res);
+      },
+      fail(res) {
+        callback('fail', res);
+      },
+      complete(res) {
+        callback('complete', res);
+      },
+    });
+  },
 };
 
 const waypoint = {
