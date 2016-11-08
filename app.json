@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/destination/destination",
+    "pages/explore/explore",
     "pages/waypoint/waypoint",
     "pages/user/user",
     "pages/trip/trip"
@@ -23,7 +23,7 @@
       "selectedIconPath": "images/index_pressed.png",
       "text": "推荐"
     }, {
-      "pagePath": "pages/destination/destination",
+      "pagePath": "pages/explore/explore",
       "iconPath": "images/destination_normal.png",
       "selectedIconPath": "images/destination_pressed.png",
       "text": "发现"
