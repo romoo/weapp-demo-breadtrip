@@ -22,7 +22,7 @@
             <image wx:if="{{ star > poi.rating && star - 1 < poi.rating }}" src="../../images/destination/semistar_s.png"></image>
             <image wx:if="{{ star > poi.rating && !(star - 1 < poi.rating) }}" src="../../images/destination/unstar_s.png"></image>
           </block>
-          <view class="count">{{ poi.rating }}人点评</view>
+          <view class="count">{{ poi.rating_users }}人点评</view>
         </view>
       </view>
       <view class="mask"></view>
