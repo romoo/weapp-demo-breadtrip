@@ -1,0 +1,29 @@
+<view class="waypoint" wx:if="{{ waypoint }}">
+  <block wx:if="{{ waypoint.photo }}">
+    <view class="photo-ctn">
+      <image bindtap="previewImage" data-src="{{ waypoint.photo }}" style="width: 100%; height: {{ waypoint.photo_info.h * (windowWidth - 30) / waypoint.photo_info.w }}px; background-color: #eeeeee;" class="cover" src="{{ waypoint.photo_webtrip }}"></image>
+    </view>
+    <view wx:if="{{ waypoint.text }}" class="text">{{ waypoint.text }}</view>
+    <view class="wp-stats">
+      <view class="wp-time"><image class="icon-time" src="../../images/time.png"></image>{{ waypoint.local_time }}</view>
+    </view>
+  </block>
+  <view class="recommender">
+    <view class="title">{{ replies.recommender_count }} 人喜欢</view>
+    <view class="recommender_list">
+      <image wx:for="{{ replies.recommenders }}" wx:for-item="user" src="{{ user.avatar_m }}" data-id="{{ user.id }}" class="avatar" bindtap="gotoUser"></image>
+    </view>
+  </view>
+  <view class="comment">
+    <view class="title">{{ replies.comment_count }} 人评价</view>
+    <view class="comment_list">
+      <view wx:for="{{ replies.comments }}" wx:for-item="comment" class="item">
+        <image src="{{ comment.user.avatar_m }}" class="avatar"></image>
+        <view class="info">
+          <view><text class="username">{{ comment.user.name }}: </text><text class="comment_text">{{ comment.comment }}</text></view>
+          <view class="time">{{ comment.date_added }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,82 @@
+page{
+  background-color: #fbf7ed;
+  margin-bottom: 40px;
+}
+.waypoint{
+  padding: 15px;
+}
+.waypoint .photo-ctn{
+  position: relative;
+}
+.waypoint .cover{
+  vertical-align: bottom;
+}
+.waypoint .text{
+  background-color: #fff;
+  padding: 5px 10px 0;
+  color: #5c5c5c;
+  word-break: break-word;
+}
+.waypoint .wp-stats{
+  padding: 5px 9px 11px;
+  background-color: #fff;
+  overflow: hidden;
+  border-bottom: 3px solid #e7e7e7;
+}
+.waypoint .wp-stats .wp-time{
+  font-size: 12px;
+  float: left;
+  color: #999;
+  height: 22px;
+  line-height: 22px;
+}
+.waypoint .wp-stats .icon-time{
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  position: relative;
+  top: -1px;
+  width: 12px;
+  height: 12px;
+}
+.recommender,
+.comment{
+}
+.recommender .title,
+.comment .title{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #a8915e;
+  font-weight: bold;
+}
+.recommender_list{
+  overflow: hidden;
+}
+.recommender_list .avatar{
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  float: left;
+  margin: 0 10px 10px 0;
+}
+.comment .item{
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+.comment .info{
+  overflow: hidden;
+}
+.comment .avatar{
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  float: left;
+  margin-right: 10px;
+}
+.comment .username{
+  color: #4abdcc;
+}
+.comment .time{
+  color: #999;
+}

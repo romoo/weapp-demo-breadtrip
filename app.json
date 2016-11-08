@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/destination/destination",
+    "pages/waypoint/waypoint",
     "pages/user/user",
     "pages/trip/trip"
   ],
