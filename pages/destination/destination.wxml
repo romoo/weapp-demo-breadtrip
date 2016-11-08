@@ -1,3 +1,5 @@
+<import src="../../components/widget/rating.wxml"/>
+
 <view class="header">
   <image style="width: {{ windowWidth }}px;" src="{{ info.hottest_places[0].photo }}" mode="aspectFill"></image>
   <view class="title">
@@ -17,11 +19,7 @@
       <view class="info">
         <view class="title">{{ poi.name }}</view>
         <view class="rating">
-          <block wx:for="{{ [1, 2, 3, 4, 5] }}" wx:for-item="star">
-            <image wx:if="{{ star <= poi.rating }}" src="../../images/destination/star_s.png"></image>
-            <image wx:if="{{ star > poi.rating && star - 1 < poi.rating }}" src="../../images/destination/semistar_s.png"></image>
-            <image wx:if="{{ star > poi.rating && !(star - 1 < poi.rating) }}" src="../../images/destination/unstar_s.png"></image>
-          </block>
+          <template is="m-rating" data="{{count: poi.rating}}"/>
           <view class="count">{{ poi.rating_users }}人点评</view>
         </view>
       </view>

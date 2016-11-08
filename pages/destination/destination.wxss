@@ -91,7 +91,10 @@ page{
   padding-right: 28rpx;
   text-shadow: 2rpx 4rpx rgba(0, 0, 0, .12);
 }
-.poi .rating image{
+.poi .m-rating{
+  float: left;
+}
+.poi .m-rating image{
   width: 16rpx;
   height: 16rpx;
   float: left;
