@@ -1,4 +1,4 @@
-const apiURL = 'http://api.breadtrip.com';
+const apiURL = 'https://kainy.cn/api/trip';
 
 const user = {
   info(userId, callback) {
