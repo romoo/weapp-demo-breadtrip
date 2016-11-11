@@ -11,13 +11,13 @@
   <view class="recommender">
     <view class="title">{{ replies.recommender_count }} 人喜欢</view>
     <view class="recommender_list">
-      <image wx:for="{{ replies.recommenders }}" wx:for-item="user" src="{{ user.avatar_m }}" data-id="{{ user.id }}" class="avatar" bindtap="gotoUser"></image>
+      <image wx:for="{{ replies.recommenders }}" wx:for-item="user" wx:key="user.id" src="{{ user.avatar_m }}" data-id="{{ user.id }}" class="avatar" bindtap="gotoUser"></image>
     </view>
   </view>
   <view class="comment">
     <view class="title">{{ replies.comment_count }} 人评价</view>
     <view class="comment_list">
-      <view wx:for="{{ replies.comments }}" wx:for-item="comment" class="item">
+      <view wx:for="{{ replies.comments }}" wx:for-item="comment" wx:key="comment.id" class="item">
         <image src="{{ comment.user.avatar_m }}" class="avatar"></image>
         <view class="info">
           <view><text class="username">{{ comment.user.name }}: </text><text class="comment_text">{{ comment.comment }}</text></view>

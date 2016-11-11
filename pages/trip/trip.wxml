@@ -7,12 +7,12 @@
     </view>
   </view>
   <view class="trip-wps">
-    <block wx:for="{{ trip.days }}" wx:for-item="day">
+    <block wx:for="{{ trip.days }}" wx:for-item="day" wx:key="day.day">
       <view class="day">
         <view class="day-marker"><text class="circle"></text>{{ day.date }} 第{{ day.day }}天</view>
         <view class="wp-sep clear-both"></view>
         <view class="day-content">
-          <block wx:for="{{ day.waypoints }}" wx:for-item="wp">
+          <block wx:for="{{ day.waypoints }}" wx:for-item="wp" wx:key="wp.id">
             <block wx:if="{{ wp.photo || wp.text }}">
               <view class="waypoint" bindtap="viewWaypoint" data-waypoint="{{ wp.id }}">
                 <block wx:if="{{ wp.photo }}">

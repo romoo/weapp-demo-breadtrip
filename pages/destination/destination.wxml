@@ -14,7 +14,7 @@
 <view wx:if="{{ pois }}" class="place">
   <view class="h2"><text>热门地点</text></view>
   <view class="list">
-    <view wx:for="{{ pois }}" wx:for-item="poi" class="poi">
+    <view wx:for="{{ pois }}" wx:for-item="poi" class="poi" wx:key="poi.id">
       <image src="{{ poi.cover_s }}" mode="aspectFill"></image>
       <view class="info">
         <view class="title">{{ poi.name }}</view>
