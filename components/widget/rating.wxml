@@ -1,14 +1,14 @@
 <template name="m-rating">
   <view class="m-rating">
-    <block wx:if="{{ size === 's' }}" wx:for="{{ [1, 2, 3, 4, 5] }}" wx:for-item="index" wx:key="index">
-      <image wx:if="{{ index <= count }}" src="../../images/destination/star_s.png"></image>
-      <image wx:if="{{ index > count && index - 1 < count }}" src="../../images/destination/semistar_s.png"></image>
-      <image wx:if="{{ index > count && !(index - 1 < count) }}" src="../../images/destination/unstar_s.png"></image>
+    <block wx:if="{{ size === 's' }}" wx:for="{{ [1, 2, 3, 4, 5] }}" wx:for-item="i" wx:key="*this">
+      <image wx:if="{{ i <= count }}" src="../../images/destination/star_s.png"></image>
+      <image wx:if="{{ i > count && i - 1 < count }}" src="../../images/destination/semistar_s.png"></image>
+      <image wx:if="{{ i > count && !(i - 1 < count) }}" src="../../images/destination/unstar_s.png"></image>
     </block>
-    <block wx:if="{{ size === 'm' }}" wx:for="{{ [1, 2, 3, 4, 5] }}" wx:for-item="index" wx:key="index">
-      <image wx:if="{{ index <= count }}" src="../../images/destination/star.png"></image>
-      <image wx:if="{{ index > count && index - 1 < count }}" src="../../images/destination/semistar.png"></image>
-      <image wx:if="{{ index > count && !(index - 1 < count) }}" src="../../images/destination/unstar.png"></image>
+    <block wx:if="{{ size === 'm' }}" wx:for="{{ [1, 2, 3, 4, 5] }}" wx:for-item="i" wx:key="*this">
+      <image wx:if="{{ i <= count }}" src="../../images/destination/star.png"></image>
+      <image wx:if="{{ i > count && i - 1 < count }}" src="../../images/destination/semistar.png"></image>
+      <image wx:if="{{ i > count && !(i - 1 < count) }}" src="../../images/destination/unstar.png"></image>
     </block>
   </view>
 </template>
