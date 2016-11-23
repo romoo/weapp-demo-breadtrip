@@ -1,8 +1,5 @@
 const App = getApp();
 const api = require('../../utils/api.js');
-const util = require('../../utils/util.js');
-
-const formatTime = util.formatTime;
 
 Page({
   data: {
@@ -55,6 +52,12 @@ Page({
         });
         wx.hideToast();
       }
+    });
+  },
+  viewPOIList() {
+    const self = this;
+    wx.navigateTo({
+      url: `../poi/poi?type=${self.data.info.type}&id=${self.data.info.id}&name=${self.data.title}`,
     });
   },
 });

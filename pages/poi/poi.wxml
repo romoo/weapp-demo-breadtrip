@@ -1,0 +1,12 @@
+<import src="../../components/widget/rating.wxml"/>
+
+<scroll-view scroll-x="true"  class="header">
+  <view class="nav">
+    <view class="{{ poiType === 'all' ? 'selected' : ''}}" data-type="all" bindtap="changePOIType">全部</view>
+    <view class="{{ poiType === 'sights' ? 'selected' : ''}}" data-type="sights" bindtap="changePOIType">景点</view>
+    <view class="{{ poiType === 'hotel' ? 'selected' : ''}}" data-type="hotel" bindtap="changePOIType">住宿</view>
+    <view class="{{ poiType === 'restaurant' ? 'selected' : ''}}" data-type="restaurant" bindtap="changePOIType">餐厅</view>
+    <view class="{{ poiType === 'entertainment' ? 'selected' : ''}}" data-type="entertainment" bindtap="changePOIType">休闲娱乐</view>
+    <view class="{{ poiType === 'mall' ? 'selected' : ''}}" data-type="mall" bindtap="changePOIType">购物</view>
+  </view>
+</scroll-view>

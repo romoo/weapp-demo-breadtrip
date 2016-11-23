@@ -10,9 +10,15 @@
   <view class="mask"></view>
 </view>
 <view class="nav">
+  <image bindtap="viewPOIList" src="../../images/destination/pois.png"></image>
+  <image src="../../images/destination/trips.png"></image>
 </view>
 <view wx:if="{{ pois }}" class="place">
-  <view class="h2"><text>热门地点</text></view>
+  <view class="h2">
+    <image src="../../images/destination/divide_l.png"></image>
+    <text>热门地点</text>
+    <image src="../../images/destination/divide_r.png"></image>
+  </view>
   <view class="list">
     <view wx:for="{{ pois }}" wx:for-item="poi" class="poi" wx:key="poi.id">
       <image src="{{ poi.cover_s }}" mode="aspectFill"></image>
@@ -26,4 +32,5 @@
       <view class="mask"></view>
     </view>
   </view>
+  <view class="all" bindtap="viewPOIList">全部热门地点</view>
 </view>

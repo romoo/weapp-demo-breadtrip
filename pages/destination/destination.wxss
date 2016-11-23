@@ -40,13 +40,34 @@ page{
   z-index: 2;
   border-radius: 20rpx 20rpx 0 0;
   top: -20rpx;
-  padding-bottom: 100rpx;
+  padding: 40rpx 0 40rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+.nav image{
+  width: 88rpx;
+  height: 94rpx;
+  margin: 0 40rpx;
 }
 .place .h2{
+  color: #5c5c5c;
   text-align: center;
   font-size: 28rpx;
   font-weight: bold;
   margin-bottom: 30rpx;
+}
+.place .h2 image{
+  width: 146rpx;
+  height: 10rpx;
+  position: relative;
+  top: -4rpx;
+}
+.place .h2 text{
+  margin: 0 40rpx;
 }
 .list{
   display: flex;
@@ -56,7 +77,7 @@ page{
   align-content: flex-start;
   align-items: center;
   padding: 0 20rpx;
-  margin-bottom: 50rpx;
+  margin-bottom: 28rpx;
 }
 .poi{
   color: #fff;
@@ -108,4 +129,14 @@ page{
   font-size: 18rpx;
   color: rgba(255, 255, 255, .6);
   text-shadow: 2rpx 4rpx rgba(0, 0, 0, .12);
+}
+.all{
+  color: #999;
+  font-size: 30rpx;
+  border: 1rpx solid #b0b0b0;
+  border-radius: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin: 0 20rpx 40rpx;
 }

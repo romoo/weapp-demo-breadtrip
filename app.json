@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/explore/explore",
     "pages/destination/destination",
+    "pages/poi/poi",
     "pages/waypoint/waypoint",
     "pages/user/user",
     "pages/trip/trip"
