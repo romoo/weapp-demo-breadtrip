@@ -1,5 +1,8 @@
+@import "../../components/poi/poi.wxss";
+
 page{
   background-color: #fbf7ed;
+  margin-top: 90rpx;
 }
 .header{
   position: fixed;
@@ -28,4 +31,11 @@ page{
   color: #fff;
   border-radius: 50rpx;
   background-image: linear-gradient(to top, #4abdcc, #51d7df);
+}
+.m-poi{
+  margin: 0 20rpx 20rpx;
+}
+.loading{
+  color: #999;
+  text-align: center;
 }

@@ -1,0 +1,19 @@
+<import src="../../components/widget/rating.wxml"/>
+
+<template name="m-poi">
+  <view class="m-poi" bindtap="viewTrip" data-type="{{ poi.type }}" data-id="{{ poi.id }}" data-name="{{ poi.name }}">              
+    <image class="cover" src="{{ poi.cover_s }}" background-size="cover"></image>
+    <image wx:if="{{ poi.recommended }}" class="label" src="../../images/destination/recommended.png"></image>
+    <view class="info">
+      <view class="title"><text>{{ poi.name }}</text></view>
+      <view class="rating">
+        <template is="m-rating" data="{{count: poi.rating, size: 'm'}}"/>
+        <text class="count">{{ poi.rating_users }} 点评</text>
+      </view>
+      <view class="desc">
+        <view><text>{{ poi.recommended_reason ? poi.recommended_reason : (poi.tips.length > 0 ? poi.tips[0].content : poi.description) }}</text></view>
+      </view>
+      <view class="detail">{{ poi.visited_count }} 人去过</view>
+    </view>
+  </view>
+</template>
