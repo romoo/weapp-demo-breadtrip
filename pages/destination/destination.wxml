@@ -25,7 +25,7 @@
       <view class="info">
         <view class="title">{{ poi.name }}</view>
         <view class="rating">
-          <template is="m-rating" data="{{count: poi.rating}}"/>
+          <template is="m-rating" data="{{count: poi.rating, size: 's'}}"/>
           <view class="count">{{ poi.rating_users }}人点评</view>
         </view>
       </view>
