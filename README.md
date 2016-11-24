@@ -1,23 +1,19 @@
 # weapp-demo-breadtrip
 
-基于[面包旅行](http://breadtrip.com/) API 制作的[微信小程序](https://mp.weixin.qq.com/debug/wxadoc/dev/index.html)示例
+A [Wechat-App](https://mp.weixin.qq.com/debug/wxadoc/dev/index.html) demo based on [Breadtrip](http://breadtrip.com/) API
+
+## Features
+
+- Write in ECMAScript 2015 (ES6)
+	- ESLint with [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+- Use [`rpx`](https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxss.html?t) unit
 
 ## Usage
 
-使用小程序[调试工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)
-
-## Todo List
-
-- [x] 热门页面
-- [x] 游记页面
-- [x] 用户页面
-- [x] 目的地页面
-- [ ] POI 页面
-
-## Style Guide
-
-[Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+- Clone this repo
+- open with [Wechat devtools](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)
 
 ## License
 
 [Apache 2.0](LICENSE)
+
