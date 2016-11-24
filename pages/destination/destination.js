@@ -57,7 +57,7 @@ Page({
   viewPOIList() {
     const self = this;
     wx.navigateTo({
-      url: `../poi/poi?type=${self.data.info.type}&id=${self.data.info.id}&name=${self.data.title}`,
+      url: `../poi_list/poi_list?type=${self.data.info.type}&id=${self.data.info.id}&name=${self.data.title}`,
     });
   },
 });
