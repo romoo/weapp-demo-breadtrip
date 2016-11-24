@@ -95,6 +95,6 @@ Page({
     self.setData({
       poiType,
     });
-    this.getPOIList(self.data.type, self.data.id, 'all', true);
+    this.getPOIList(self.data.type, self.data.id, poiType, true);
   },
 });
