@@ -1,6 +1,6 @@
 <template name="m-trip">
   <view class="m-trip" bindtap="viewTrip" data-id="{{ trip.id }}" data-name="{{ trip.name }}">              
-    <image class="cover" src="{{ trip.cover_image_w640 }}" background-size="cover"></image>
+    <image class="cover" src="{{ trip.cover_image_w640 }}" mode="aspectFill"></image>
     <view class="info">
       <text class="h2">{{ trip.name }}</text>
       <view class="detail">
