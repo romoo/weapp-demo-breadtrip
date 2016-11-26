@@ -94,3 +94,106 @@
   bottom: 24rpx;
   font-size: 20rpx;
 }
+
+.m-trip-s{
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+}
+.m-trip-s .mask{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 222rpx;
+  height: 240rpx;
+  background-color: rgba(255, 255, 255, 0);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, .6), rgba(0, 0, 0, 0));
+  border-top-left-radius: 8rpx;
+  border-bottom-left-radius: 8rpx;
+}
+.m-trip-s .cover{
+  width: 100%;
+  height: 240rpx;
+  vertical-align: bottom;
+  background-position: center center;
+}
+.m-trip-s .info{
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 20rpx 28rpx;
+  text-shadow: 2rpx 3rpx rgba(0, 0, 0, .2);
+}
+.m-trip-s .title{
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-left: -4rpx;
+  line-height: 50rpx;
+}
+.m-trip-s .detail{
+  font-size: 20rpx;
+  position: relative;
+  height: 16rpx;
+  line-height: 16rpx;
+  padding-left: 16rpx;
+  margin-top: 4rpx;
+}
+.m-trip-s .detail::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6rpx;
+  height: 16rpx;
+  background-color: #4abdcc;
+}
+.m-trip-s .detail view{
+  display: inline-block;
+  margin-right: 16rpx;
+}
+.m-trip-s .detail text{
+  font-weight: bold;
+}
+.m-trip-s .stat{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 24rpx;
+  height: 32rpx;
+  line-height: 31rpx;
+  font-size: 20rpx;
+  padding-left: 28rpx;
+  background-color: rgba(0, 0, 0, .4);
+  z-index: 2;
+}
+.m-trip-s .stat::before{
+  content: '';
+  width: 100%;
+  position: absolute;
+  height: 40rpx;
+  left: 0;
+  bottom: -4rpx;
+  background-color: rgba(0, 0, 0, .4);
+  z-index: -1;
+}
+.m-trip-s .stat view{
+  position: relative;
+  display: inline-block;
+  margin-right: 30rpx;
+  padding-left: 16rpx;
+}
+.m-trip-s .stat view::before{
+  content: '';
+  width: 8rpx;
+  height: 8rpx;
+  position: absolute;
+  left: 0;
+  top: 12rpx;
+  background-color: #4abdcc;
+  border-radius: 8rpx;
+}
+.m-trip-s .stat text{
+  font-weight: bold;
+}
