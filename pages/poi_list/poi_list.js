@@ -13,6 +13,7 @@ Page({
     hasMore: true,
     windowWidth: App.systemInfo.windowWidth,
     windowHeight: App.systemInfo.windowHeight,
+    pixelRatio: App.systemInfo.pixelRatio,
   },
   onReady() {
     const self = this;
@@ -21,6 +22,7 @@ Page({
     });
   },
   onLoad(options) {
+    const self = this;
     const type = options.type;
     const id = options.id;
     const name = options.name;
@@ -36,6 +38,13 @@ Page({
     });
     wx.setNavigationBarTitle({
       title: name,
+    });
+    wx.getSystemInfo({
+      success(res) {
+        self.setData({
+          windowHeight: res.windowHeight,
+        });
+      },
     });
     this.getPOIList(type, id, 'all', true);
   },

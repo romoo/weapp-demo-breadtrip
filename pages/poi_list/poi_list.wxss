@@ -32,10 +32,16 @@ page{
   border-radius: 50rpx;
   background-image: linear-gradient(to top, #4abdcc, #51d7df);
 }
+.list{
+  position: absolute;
+  top: 0;
+  padding-top: 70rpx;
+}
 .m-poi{
-  margin: 0 20rpx 20rpx;
+  margin: 20rpx;
 }
 .loading{
   color: #999;
   text-align: center;
+  margin: 20rpx 0;
 }
