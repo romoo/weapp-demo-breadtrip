@@ -99,6 +99,7 @@ Page({
     this.getPOIList(self.data.type, self.data.id, self.data.poiType, false);
   },
   changePOIType(e) {
+    // TODO: stop previous request
     const self = this;
     const poiType = e.currentTarget.dataset.type;
     self.setData({
