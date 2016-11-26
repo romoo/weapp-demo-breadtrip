@@ -60,4 +60,10 @@ Page({
       url: `../poi_list/poi_list?type=${self.data.info.type}&id=${self.data.info.id}&name=${self.data.title}`,
     });
   },
+  viewTripList() {
+    const self = this;
+    wx.navigateTo({
+      url: `../trip_list/trip_list?type=${self.data.info.type}&id=${self.data.info.id}&name=${self.data.title}`,
+    });
+  },
 });

@@ -127,6 +127,26 @@ const destination = {
       },
     });
   },
+  trips(type, id, data, callback) {
+    wx.request({
+      url: `${apiURL}/destination/place/${type}/${id}/trips/`,
+      method: 'GET',
+      data,
+      header: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      success(res) {
+        callback('success', res);
+      },
+      fail(res) {
+        callback('fail', res);
+      },
+      complete(res) {
+        callback('complete', res);
+      },
+    });
+  },
 };
 
 const waypoint = {

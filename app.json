@@ -4,6 +4,7 @@
     "pages/explore/explore",
     "pages/destination/destination",
     "pages/poi_list/poi_list",
+    "pages/trip_list/trip_list",
     "pages/waypoint/waypoint",
     "pages/user/user",
     "pages/trip/trip"

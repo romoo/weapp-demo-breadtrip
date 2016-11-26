@@ -11,7 +11,7 @@
 </view>
 <view class="nav">
   <image bindtap="viewPOIList" src="../../images/destination/pois.png"></image>
-  <image src="../../images/destination/trips.png"></image>
+  <image bindtap="viewTripList" src="../../images/destination/trips.png"></image>
 </view>
 <view wx:if="{{ pois }}" class="place">
   <view class="h2">

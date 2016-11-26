@@ -1,0 +1,10 @@
+<import src="../../components/trip/trip.wxml"/>
+
+<scroll-view class="list" style="height: {{ windowHeight }}px; width: {{ windowWidth }}px;" scroll-y="true"  bindscrolltolower="loadMore" lower-threshold="800">
+  <block wx:for="{{ trips }}" wx:for-item="trip" wx:key="trip.id">
+    <template is="m-trip" wx:if="{{ trip.version === 1 }}" data="{{trip: trip, mode: 3}}" />
+  </block>
+  <view wx:if="{{ hasMore }}" class="loading">
+    正在加载...
+  </view>
+</scroll-view>

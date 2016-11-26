@@ -1,0 +1,13 @@
+@import "../../components/trip/trip.wxss";
+
+page{
+  background-color: #f6f6f6;
+}
+.m-trip-s{
+  margin: 20rpx;
+}
+.loading{
+  color: #b0b0b0;
+  text-align: center;
+  margin: 20rpx 0;
+}
