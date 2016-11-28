@@ -14,8 +14,11 @@ Page({
   onLoad(options) {
     const self = this;
     const userId = options.id || self.data.userId;
-    api.user.info(userId, (state, res) => {
-      if (state === 'success') {
+    api.getUserInfoByID({
+      query: {
+        userId,
+      },
+      success: (res) => {
         const trips = res.data.trips;
         trips.map((trip) => {
           const item = trip;
@@ -30,7 +33,7 @@ Page({
         wx.setNavigationBarTitle({
           title: res.data.user_info.name,
         });
-      }
+      },
     });
   },
   viewTrip(e) {

@@ -32,8 +32,12 @@ Page({
   },
   getWaypointDetail(tripId, waypointId) {
     const self = this;
-    api.waypoint.detail(tripId, waypointId, (state, res) => {
-      if (state === 'success') {
+    api.getWaypointInfoByID({
+      query: {
+        tripId,
+        waypointId,
+      },
+      success: (res) => {
         const waypoint = res.data;
         self.setData({
           title: waypoint.trip_name,
@@ -42,11 +46,28 @@ Page({
         if (waypoint.comments > 0) {
           self.getWaypointReplies(tripId, waypointId);
         }
-      }
+      },
     });
   },
   getWaypointReplies(tripId, waypointId) {
     const self = this;
+    api.getWaypointReplyByID({
+      query: {
+        tripId,
+        waypointId,
+      },
+      success: (res) => {
+        const replies = res.data;
+        replies.comments.map((reply) => {
+          const item = reply;
+          item.date_added = formatTime(new Date(item.date_added * 1000), 2);
+          return item;
+        });
+        self.setData({
+          replies,
+        });
+      },
+    });
     api.waypoint.replies(tripId, waypointId, (state, res) => {
       if (state === 'success') {
         const replies = res.data;

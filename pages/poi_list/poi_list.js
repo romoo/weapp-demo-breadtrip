@@ -68,8 +68,14 @@ Page({
     const data = {
       start: self.data.start,
     };
-    api.destination.poi(type, id, poiType, data, (state, res) => {
-      if (state === 'success') {
+    api.getPlacePOIByID({
+      data,
+      query: {
+        type,
+        id,
+        poiType,
+      },
+      success: (res) => {
         let newList = res.data.items;
         if (needRefresh) {
           console.log('needRefresh');
@@ -91,7 +97,7 @@ Page({
           loading: false,
         });
         wx.hideToast();
-      }
+      },
     });
   },
   loadMore() {

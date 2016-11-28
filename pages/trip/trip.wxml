@@ -7,7 +7,7 @@
     </view>
   </view>
   <view class="trip-wps">
-    <block wx:for="{{ trip.days }}" wx:for-item="day" wx:key="day.day">
+    <block wx:if="{{ trip.days }}" wx:for="{{ trip.days }}" wx:for-item="day" wx:key="day.day">
       <view class="day">
         <view class="day-marker"><text class="circle"></text>{{ day.date }} 第{{ day.day }}天</view>
         <view class="wp-sep clear-both"></view>

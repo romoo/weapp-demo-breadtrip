@@ -31,27 +31,35 @@ Page({
   },
   getPlaceInfo(type, id) {
     const self = this;
-    api.destination.place(type, id, (state, res) => {
-      if (state === 'success') {
+    api.getPlaceInfoByID({
+      query: {
+        type,
+        id,
+      },
+      success: (res) => {
         const data = res.data;
         self.setData({
           info: data,
         });
         self.getPOI(type, id);
-      }
+      },
     });
   },
   getPOI(type, id) {
     const self = this;
-    const data = {};
-    api.destination.poi(type, id, '', data, (state, res) => {
-      if (state === 'success') {
+    api.getPlacePOIByID({
+      query: {
+        type,
+        id,
+        poiType: 'all',
+      },
+      success: (res) => {
         const pois = res.data.items;
         self.setData({
           pois,
         });
         wx.hideToast();
-      }
+      },
     });
   },
   viewPOIList() {

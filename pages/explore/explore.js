@@ -15,14 +15,14 @@ Page({
       icon: 'loading',
       duration: 10000,
     });
-    api.destination.list((state, res) => {
-      if (state === 'success') {
+    api.getExplorePlaceList({
+      success: (res) => {
         const dest = res.data;
         self.setData({
           elements: dest.elements,
         });
         wx.hideToast();
-      }
+      },
     });
   },
   viewPOI(e) {

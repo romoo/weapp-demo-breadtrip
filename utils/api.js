@@ -1,198 +1,68 @@
 const apiURL = 'http://api.breadtrip.com';
 
-const user = {
-  info(userId, callback) {
-    wx.request({
-      url: `${apiURL}/users/${userId}/v2/`,
-      method: 'GET',
-      header: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      success(res) {
-        callback('success', res);
-      },
-      fail(res) {
-        callback('fail', res);
-      },
-      complete(res) {
-        callback('complete', res);
-      },
-    });
-  },
+const wxRequest = (params, url) => {
+  wx.request({
+    url,
+    method: params.method || 'GET',
+    data: params.data || {},
+    header: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    success(res) {
+      if (params.success) {
+        params.success(res);
+      }
+    },
+    fail(res) {
+      if (params.fail) {
+        params.fail(res);
+      }
+    },
+    complete(res) {
+      if (params.complete) {
+        params.complete(res);
+      }
+    },
+  });
 };
 
-const trip = {
-  waypoints(tripId, callback) {
-    wx.request({
-      url: `${apiURL}/trips/${tripId}/waypoints/`,
-      method: 'GET',
-      header: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      success(res) {
-        callback('success', res);
-      },
-      fail(res) {
-        callback('fail', res);
-      },
-      complete(res) {
-        callback('complete', res);
-      },
-    });
-  },
-  hot(data, callback) {
-    wx.request({
-      url: `${apiURL}/v2/index/`,
-      method: 'GET',
-      data,
-      header: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      success(res) {
-        callback('success', res);
-      },
-      fail(res) {
-        callback('fail', res);
-      },
-      complete(res) {
-        callback('complete', res);
-      },
-    });
-  },
+const getHotTripList = (params) => {
+  wxRequest(params, `${apiURL}/v2/index/`);
 };
-
-const destination = {
-  list(callback) {
-    wx.request({
-      url: `${apiURL}/destination/v3/`,
-      method: 'GET',
-      header: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      success(res) {
-        callback('success', res);
-      },
-      fail(res) {
-        callback('fail', res);
-      },
-      complete(res) {
-        callback('complete', res);
-      },
-    });
-  },
-  place(type, id, callback) {
-    wx.request({
-      url: `${apiURL}/destination/place/${type}/${id}/`,
-      method: 'GET',
-      header: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      success(res) {
-        callback('success', res);
-      },
-      fail(res) {
-        callback('fail', res);
-      },
-      complete(res) {
-        callback('complete', res);
-      },
-    });
-  },
-  poi(type, id, poiType, data, callback) {
-    let poi = 'all/';
-    if (poiType) {
-      poi = `${poiType}/`;
-    }
-    wx.request({
-      url: `${apiURL}/destination/place/${type}/${id}/pois/${poi}`,
-      method: 'GET',
-      data,
-      header: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      success(res) {
-        callback('success', res);
-      },
-      fail(res) {
-        callback('fail', res);
-      },
-      complete(res) {
-        callback('complete', res);
-      },
-    });
-  },
-  trips(type, id, data, callback) {
-    wx.request({
-      url: `${apiURL}/destination/place/${type}/${id}/trips/`,
-      method: 'GET',
-      data,
-      header: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      success(res) {
-        callback('success', res);
-      },
-      fail(res) {
-        callback('fail', res);
-      },
-      complete(res) {
-        callback('complete', res);
-      },
-    });
-  },
+const getExplorePlaceList = (params) => {
+  wxRequest(params, `${apiURL}/destination/v3/`);
 };
-
-const waypoint = {
-  detail(tripId, waypointId, callback) {
-    wx.request({
-      url: `${apiURL}/trips/${tripId}/waypoints/${waypointId}/`,
-      method: 'GET',
-      header: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      success(res) {
-        callback('success', res);
-      },
-      fail(res) {
-        callback('fail', res);
-      },
-      complete(res) {
-        callback('complete', res);
-      },
-    });
-  },
-  replies(tripId, waypointId, callback) {
-    wx.request({
-      url: `${apiURL}/trips/${tripId}/waypoints/${waypointId}/replies/`,
-      method: 'GET',
-      header: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      success(res) {
-        callback('success', res);
-      },
-      fail(res) {
-        callback('fail', res);
-      },
-      complete(res) {
-        callback('complete', res);
-      },
-    });
-  },
+const getPlaceInfoByID = (params) => {
+  wxRequest(params, `${apiURL}/destination/place/${params.query.type}/${params.query.id}/`);
+};
+const getPlacePOIByID = (params) => {
+  wxRequest(params, `${apiURL}/destination/place/${params.query.type}/${params.query.id}/pois/${params.query.poiType}/`);
+};
+const getTripInfoByID = (params) => {
+  wxRequest(params, `${apiURL}/trips/${params.query.tripId}/waypoints/`);
+};
+const getPlaceTripByID = (params) => {
+  wxRequest(params, `${apiURL}/destination/place/${params.query.type}/${params.query.id}/trips/`);
+};
+const getUserInfoByID = (params) => {
+  wxRequest(params, `${apiURL}/users/${params.query.userId}/v2`);
+};
+const getWaypointInfoByID = (params) => {
+  wxRequest(params, `${apiURL}/trips/${params.query.tripId}/waypoints/${params.query.waypointId}/`);
+};
+const getWaypointReplyByID = (params) => {
+  wxRequest(params, `${apiURL}/trips/${params.query.tripId}/waypoints/${params.query.waypointId}/replies/`);
 };
 
 module.exports = {
-  user,
-  trip,
-  destination,
-  waypoint,
+  getHotTripList,
+  getExplorePlaceList,
+  getPlaceInfoByID,
+  getPlacePOIByID,
+  getTripInfoByID,
+  getPlaceTripByID,
+  getUserInfoByID,
+  getWaypointInfoByID,
+  getWaypointReplyByID,
 };

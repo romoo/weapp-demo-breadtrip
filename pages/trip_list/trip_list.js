@@ -62,8 +62,13 @@ Page({
     const data = {
       start: self.data.start,
     };
-    api.destination.trips(type, id, data, (state, res) => {
-      if (state === 'success') {
+    api.getPlaceTripByID({
+      data,
+      query: {
+        type,
+        id,
+      },
+      success: (res) => {
         let newList = res.data.items;
         newList.map((trip) => {
           const item = trip;
@@ -86,7 +91,7 @@ Page({
           loading: false,
         });
         wx.hideToast();
-      }
+      },
     });
   },
   loadMore() {

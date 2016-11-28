@@ -3,7 +3,7 @@ const api = require('../../utils/api.js');
 const app = getApp();
 Page({
   data: {
-    trip: null,
+    trip: {},
     options: null,
     windowWidth: 0,
   },
@@ -25,14 +25,17 @@ Page({
       icon: 'loading',
       duration: 10000,
     });
-    api.trip.waypoints(id, (state, res) => {
-      if (state === 'success') {
+    api.getTripInfoByID({
+      query: {
+        tripId: id,
+      },
+      success: (res) => {
         const trip = res.data;
         self.setData({
           trip,
         });
         wx.hideToast();
-      }
+      },
     });
   },
   viewWaypoint(e) {

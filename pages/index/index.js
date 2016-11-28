@@ -30,8 +30,9 @@ Page({
     self.setData({
       loading: true,
     });
-    api.trip.hot(data, (state, res) => {
-      if (state === 'success') {
+    api.getHotTripList({
+      data,
+      success: (res) => {
         let newList = res.data.data.elements;
         newList.map((trip) => {
           const item = trip;
@@ -51,7 +52,7 @@ Page({
           start: nextStart,
           loading: false,
         });
-      }
+      },
     });
   },
   viewTrip(e) {
