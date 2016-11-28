@@ -5,8 +5,5 @@
     "App": false,
     "Page": false,
     "getApp": false
-  },
-  "rules": {
-    "allowShortCircuit": true
   }
 }
