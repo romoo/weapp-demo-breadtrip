@@ -2,6 +2,9 @@
 
 A [Wechat-App](https://mp.weixin.qq.com/debug/wxadoc/dev/index.html) demo based on [Breadtrip](http://breadtrip.com/) API
 
+## ScreenShot
+![demo](./screenshot/demo.png)
+
 ## Features
 
 - Write in ECMAScript 2015 (ES6)
