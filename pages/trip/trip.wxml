@@ -19,11 +19,11 @@
                   <view class="photo-ctn">
                     <image style="width: 100%; height: {{ wp.photo_info.h * (windowWidth - 30) / wp.photo_info.w }}px; background-color: #eeeeee;" class="cover" src="{{ wp.photo_webtrip }}"></image>
                   </view>
-                  <view wx:if="{{ wp.text }}" class="text">{{ wp.text }}</view>
-                  <view class="wp-stats">
-                    <view class="wp-time"><image class="icon-time" src="../../images/time.png"></image>{{ wp.local_time }}</view>
-                  </view>
                 </block>
+                <view wx:if="{{ wp.text }}" class="text">{{ wp.text }}</view>
+                <view class="wp-stats">
+                  <view class="wp-time"><image class="icon-time" src="../../images/time.png"></image>{{ wp.local_time }}</view>
+                </view>
               </view>
               <view class="wp-sep"></view>
             </block>
